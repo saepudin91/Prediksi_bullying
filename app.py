@@ -3,7 +3,7 @@ import pandas as pd
 import gspread
 from google.oauth2.service_account import Credentials
 
-st.title("Prediksi Prestasi Belajar Siswa Berdasarkan Bullying (Tanpa Model)")
+st.title("Prediksi Prestasi Belajar Siswa Berdasarkan Bullying")
 
 # === KONFIGURASI GOOGLE SHEETS ===
 secrets = st.secrets["google_sheets"]
@@ -49,10 +49,10 @@ if opsi == "Input Manual":
     kelas = st.text_input("Kelas")
 
     st.header("Input Skor Rata-rata")
-    x1 = st.slider("Skor X1 (Bullying yang Dialami)", 1.0, 5.0, step=0.1)
-    x2 = st.slider("Skor X2 (Reaksi terhadap Bullying)", 1.0, 5.0, step=0.1)
+    x1 = st.slider("Skor X1 (Tingkat Bullying)", 1.0, 5.0, step=0.1)
+    x2 = st.slider("Skor X2 (Kesehatan Mental)", 1.0, 5.0, step=0.1)
     x3 = st.slider("Skor X3 (Dukungan Sosial)", 1.0, 5.0, step=0.1)
-    y = st.slider("Skor Y (Motivasi/Kemauan Belajar)", 1.0, 5.0, step=0.1)
+    y = st.slider("Skor Y (Prestasi Belajar)", 1.0, 5.0, step=0.1)
 
     st.header("Input Jenis Bullying (Skor Likert 1-5)")
     verbal = st.slider("Bullying Verbal", 1, 5)
